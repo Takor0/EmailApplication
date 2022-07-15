@@ -1,5 +1,5 @@
 # EmailApplication
-The repository contains solution for [Profil Software](https://profil-software.com) recruitment task for Intern Python Backend Developer. The description of the task is available in [task.md](./task.md).
+The repository contains solution for [Profil Software](https://profil-software.com) recruitment task for Intern Python Backend Developer. The description of the task is available in [task.md](./TASK.md).
 ## Requirements
 - `Python 3.10`
 ## Run instructions
