@@ -18,9 +18,7 @@ def main():
     application = Application(email_reader_factory, email_processor_factory, input_validator, output_printer)
     try:
         application.run()
-    except SystemExit:
-        pass
-    except BaseException:
+    except Exception:
         print("Unexpected Error")
 
 

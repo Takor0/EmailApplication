@@ -5,9 +5,9 @@ from src.EmailReader.CsvEmailReader import CsvEmailReader
 
 
 class EmailReaderFactory:
-    def make(self, type):
-        if type == '.txt':
+    def make(self, file_type):
+        if file_type == '.txt':
             return TxtEmailReader()
-        if type == '.csv':
+        if file_type == '.csv':
             return CsvEmailReader()
         raise InputError.UnknownEmailReaderTypeError
