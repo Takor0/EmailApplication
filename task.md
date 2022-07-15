@@ -1,86 +1,52 @@
-# The Software House recruitment task
+# Recruitment task 2022
+Hi!
+This is the task in the recruitment process for the position of Intern Python Developer at Profil Software. Read the instructions carefully.
+Good luck!
+## Background
+There is a directory with files with emails and logs of sent emails. We would like you to build a script/CLI that performs some operations on the email data.
 
-The repository contains solution for [TSH](https://tsh.io/) recruitment task. The description of the task is available in [task.md](./task.md).
+## Specifications
+All files (with random names) with emails are **stored in the `emails` directory and your program should fetch required data from there**. Also, the files are named randomly. Each file is one of two types:
+- `txt`: one email per line
+- `csv`: in the first column `username`, in the second one `email`
 
-## Used technologies
+**Important!**  
+When any operation is performed on the data, remember to reject duplicates and incorrect emails (except task 1).  
+Email is considered valid if (for the sake of simplicity):
+- there is only one `@`
+- length of the part before the `@` is at least 1
+- length of the part between `@`  and `.` is at least 1
+- length of the part after the last `.` is at least 1 and at most 4 and contains only letters and/or digits
 
-The project is written in [TypeScript](https://www.typescriptlang.org/) and uses [Node.js](https://nodejs.org/), [Express](https://expressjs.com/), [Jest](https://jestjs.io/) and [Yarn](https://yarnpkg.com/).
+## Tasks
+For each task, there is separate command **written in parentheses**.
+### 1. Show incorrect emails (`--incorrect-emails`, `-ic`)
+Print the number of invalid emails, then one invalid email per line.
+### 2. Search emails by text (`--search str`, `-s str`)
+The Program should take a string argument and print the number of found emails, then one found email per line.
+### 3. Group emails by domain (`--group-by-domain`, `-gbd`)
+Group emails by one domain and order domains and emails alphabetically
+### 4. Find emails that are not in the logs file (`--find-emails-not-in-logs path_to_logs_file`, `-feil path_to_logs_file`)
+Find emails that are not in the provided logs file. Print the numbers of found emails, then one found email per line sorted alphabetically.  
+A Logfile is formatted as follows:  
+`[DATE]: Email has been sent to 'EMAIL'`  
+For example: `[2022-05-16 16:01:03]: Email has been sent to 'verlie.halvorson@larkin.biz'` 
 
-## Requirements
+### Answers
+Answers for the data in the `emails` directory are provided in the following files:
+- task_1_answer.txt
+- task_2_answer.txt
+- task_3_answer.txt
+- task_4_answer.txt
 
-The project requires `Node.js` and `Yarn` to be installed in the runtime environment. The project was developed in environment with packages in versions:
-
-- `Node.js v12.16.2`
-- `Yarn 1.22.4`
-
-`Yarn` requires version 1.x installed in the environment but actually it uses version 2.x which is installed in the project. See `Yarn`'s [installation page](https://yarnpkg.com/getting-started/install#per-project-install) for details.
-
-
-## Run instructions
-
-### Install
-
-The project follows [`Zero-Installs`](https://yarnpkg.com/features/zero-installs) pattern so there is no need to install any packages.
-
-### Build
-
-To build the project run command from project's main folder:
-
-```shell
-yarn build
-```
-
-### Start
-
-Before start the project must be built. To start the project run command from project's main folder:
-
-```shell
-yarn start
-```
-
-### Unit Tests
-
-To run tests run command from project's main folder:
-
-```shell
-yarn test
-```
-
-## Implementation details
-
-Application provides REST API to add Movie and retrieve Movies and Genres. There are available three endpoints:
-
-### `GET /api/genres`
-
-Returns list of all available Genres
-
-### `GET /api/movies`
-
-Returns collection of the movies according to task requirements. Two filters (`duration`, `genres`) are available which must be passed as a query string. Example:
-
-`http://localhost:3000/api/movies?duration=100&genres[]=Animation&genres[]=Adventure&genres[]=Comedy`
-
-### `POST /api/movies`
-
-Endpoint for adding new Movie to the storage. The request body should contain proper JSON. Example:
-
-```json
-{
-  "title": "Title",
-  "year": 2005,
-  "runtime": 200,
-  "genres": [
-    "Music",
-    "Family",
-    "Comedy"
-  ],
-  "director": "Director",
-  "actors": "Actor 1, Actor 2",
-  "plot": "Lorem ipsum",
-  "posterUrl": "http://example.com/posters/movie1.jpg"
-}
-```
-
-## Additional info
-
-The repository contains [Postman](https://www.postman.com/) Collection available in [TSH.postman_collection.json](./TSH.postman_collection.json).
+## Rules & hints
+- use Python 3.10
+- Remeber to use the commands provided in the task names, e.g. to obtain the list of incorrect emails use `--incorrect-emails` command
+- Follow the format of the answers as in provided answer files
+- **use OOP paradigm**
+- You are free to use any third-party libraries
+- Provide README with examples of how to use your script
+- Write Python code that conforms to PEP 8
+- Remember about validating input data,
+- Please handle possible exceptions within the script in a user-friendly way
+- Please put your solution in a private repository on Github and invite reviewer@profil-software.com as a collaborator (any role with at least read-only access to code) -> https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository
